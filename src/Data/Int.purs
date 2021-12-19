@@ -66,8 +66,6 @@ round = unsafeClamp <<< Math.round
 unsafeClamp :: Number -> Int
 unsafeClamp x
   | not (isFinite x) = 0
-  | x >= toNumber top = top
-  | x <= toNumber bottom = bottom
   | otherwise = fromMaybe 0 (fromNumber x)
 
 -- | Converts an `Int` value back into a `Number`. Any `Int` is a valid `Number`
